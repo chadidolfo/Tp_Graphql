@@ -1,0 +1,24 @@
+type Query{
+    getAllPhones:[Phone]
+    getPhonesByModel(model:String):[Phone]
+    getPhoneByModelAndPrice(model:String,price:Float):[Phone]
+
+}
+type Mutation{
+    savePhone(phone:PhoneRequest):Phone
+    deletePhone(id:ID):Boolean
+}
+type Phone{
+    id:Float,
+    model:String,
+    color:String,
+    IMEI:String,
+    price:Float
+}
+
+input PhoneRequest{
+    model:String,
+    color:String,
+    IMEI:String,
+    price:Float
+}
